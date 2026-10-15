@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 # CONFIGURACIÓN DE PÁGINA
 # -----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="BHP ENC-3430 | Cálculo de Rendimientos Saravia's Book",
+    page_title="BHP ENC-3430 | Cálculo de Rendimientos BHP para Área de Estudios COX",
     page_icon="👷‍♂️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -124,7 +124,7 @@ saravia_df, detalle_df = load_saravia_rendimientos_data()
 # SIDEBAR NAVIGATION
 # -----------------------------------------------------------------------------
 st.sidebar.markdown("## BHP ENC-3430")
-st.sidebar.markdown("**Cálculo de Rendimientos (Saravia's Book)**")
+st.sidebar.markdown("**Cálculo de Rendimientos**")
 st.sidebar.markdown("---")
 
 module = st.sidebar.radio(
@@ -153,7 +153,7 @@ filtered_df = detalle_df[detalle_df["Area"].isin(selected_areas)]
 # -----------------------------------------------------------------------------
 if module == "📊 Resumen Ejecutivo de HH":
     st.markdown('<div class="main-header">Resumen Ejecutivo de Horas Hombre (HH) Directas</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Cómputo Total de Mano de Obra Directa según Rendimientos del Saravia's Book</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Cómputo Total de Mano de Obra Directa según Rendimientos del Saravia Book</div>', unsafe_allow_html=True)
 
     # Key Metrics
     total_hh = filtered_df["Total_HH"].sum()
@@ -256,7 +256,7 @@ elif module == "📋 Cómputo de HH por Instalación y Disciplina":
 # MODULE 3: TABLA DE RENDIMIENTOS (SARAVIA'S BOOK)
 # -----------------------------------------------------------------------------
 elif module == "📖 Tabla de Rendimientos (Saravia's Book)":
-    st.markdown('<div class="main-header">Tabla de Parámetros de Rendimiento (Saravia's Book)</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-header">Tabla de Parámetros de Rendimiento (Saravia Book)</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-header">Valores Base de Mano de Obra Directa para Construcción y Montaje Electromecánico</div>', unsafe_allow_html=True)
 
     r1, r2 = st.columns([5, 7])
@@ -278,7 +278,7 @@ elif module == "📖 Tabla de Rendimientos (Saravia's Book)":
     )
 
     st.markdown("""
-    **Notas Técnicas del Saravia's Book:**
+    **Notas Técnicas del Saravia Book:**
     - Los rendimientos corresponden a **Horas Hombre Directas de Terreno** sin incluir supervisión indirecta.
     - Se consideran condiciones operativas normales de minería.
     """)
@@ -375,7 +375,7 @@ elif module == "📤 Exportar Informes (Excel / CSV)":
         )
 
     with d2:
-        st.subheader("📖 Descargar Tabla Saravia's Book (CSV)")
+        st.subheader("📖 Descargar Tabla Saravia Book (CSV)")
         csv_sar = saravia_df.to_csv(index=False).encode('utf-8')
         st.download_button(
             label="Descargar Tabla Rendimientos Saravia (CSV)",
