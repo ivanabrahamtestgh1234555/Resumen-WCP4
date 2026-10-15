@@ -220,7 +220,7 @@ if module == "📊 Resumen Ejecutivo de HH":
 # -----------------------------------------------------------------------------
 elif module == "📋 Cómputo de HH por Instalación y Disciplina":
     st.markdown('<div class="main-header">Matriz Detallada de Cómputo de Horas Hombre</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Cálculo Línea por Línea: Cantidad (MTO) × Rendimiento Unitario (Saravia's Book) = Total HH</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Cálculo Línea por Línea: Cantidad (MTO) × Rendimiento Unitario (Saravia Book) = Total HH</div>', unsafe_allow_html=True)
 
     f1, f2, f3 = st.columns([4, 4, 4])
     with f1:
